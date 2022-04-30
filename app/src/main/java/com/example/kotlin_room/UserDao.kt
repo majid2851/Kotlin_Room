@@ -11,10 +11,13 @@ interface UserDao
     suspend fun addUser(user:User)
 
     @Query("Select * from ${constance.tableName}")
-     fun readAllData():LiveData<List<User>>
+    fun readAllData():LiveData<List<User>>
 
+    @Delete
+    suspend fun delete(user:User)
 
-
+    @Update
+    suspend fun update(user:User)
 
 
 
